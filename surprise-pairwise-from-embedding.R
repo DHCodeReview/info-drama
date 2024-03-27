@@ -3,7 +3,7 @@ library(tokenizers)
 library(dplyr)
 library(gtools) #pairwise combinations
 #load csv
-drama_embedding <- read.csv("C:/Users/DELL/Desktop/munka/drama-infoflow/hamlet_embeddings.csv")
+drama_embedding <- read.csv("hamlet_embeddings.csv")
 
 #prerocess the data: 
 # - embeddings as numbers
