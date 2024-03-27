@@ -1,3 +1,7 @@
+# The same procedure as in "surprise-pairwise-from-embedding.R"
+# The only exception, that here we take the whole drama and not comparing character pairs
+# Under "Weight by act" you can see the calculation of "diff" variable used also in "surprise-pairwise-from-embedding.R" 
+
 a1 <- lapply(drama_longsent$embedding_num, as.numeric)
 all_together <- list()
 max_together <- list()
@@ -76,13 +80,3 @@ for(i in 1:length(a1)){
 }
 
 
-#all sentences
-acts <- c( rep ("ACT-1", 532),
-           rep ("ACT-2", 415),
-           rep ("ACT-3", 556),
-           rep ("ACT-4", 396),
-           rep ("ACT-5", 510) )
-
-drama_embedding$act <- acts
-
-act_pos <- list(1:532, 533:947, 948:1503, 1504:1899, 1900:2409)
