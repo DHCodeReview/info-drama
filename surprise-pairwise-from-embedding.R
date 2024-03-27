@@ -2,8 +2,8 @@ library(lsa)
 library(tokenizers)
 library(dplyr)
 library(gtools) #pairwise combinations
-#load csv
-drama_embedding <- read.csv("YOUR_DIR/hamlet_embeddings.csv")
+#load tsv
+drama_embedding <- read_tsv("YOUR_DIR/hamlet_embeddings.tsv")
 
 #prerocess the data: 
 # - embeddings as numbers
@@ -23,7 +23,7 @@ longsent <- which(tok_sentence_length > 4)
 drama_longsent <- drama_embedding[drama_embedding$created_at %in% longsent, ]
 
 
-# just if not filtered the characters with more than 1000 words
+# just if not filtered the characters with more than 1000 words beforhand
 drama_short <- drama_longsent %>%
   filter( character == "#Claudius_Ham" | character == "#Gertrude_Ham" | 
             character =="#Hamlet_Ham" | character == "#Horatio_Ham" | 
@@ -70,8 +70,9 @@ for(k in 1:nrow(pairs)){
   }#end of target loop
   target$max_sim <- unlist(max_sim) 
   target1 <- target %>% filter(max_sim > 0)
+  
   # add weight by act (the diff between act_mean and all_mean)
-  # "diff" from effect_linear-correlation-time.R
+  # "diff" from surprise_linear-correlation-time.R
   
   max_sim <- list()
   for(l in 1:nrow(target1)){  
