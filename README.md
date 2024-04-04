@@ -18,5 +18,6 @@ Calculation:
 
 Example sentences (folder _sentence-example_):
 
-_hamlet-name_all-MiniLM-L6-v2.tsv_ is an example output of the preprocessing (of Shakespeare's Hamlet), which can be used in the R codes.
-In the orher folders you can find the most and less similar sentences in some pairwise compersions as a result of _pairwise_sentences.R_. You can find here the results of the comparison of different SBERT models too (in folder _model-compare_).
+1. _hamlet-name_all-MiniLM-L6-v2.tsv_ is an example output of the preprocessing (of Shakespeare's Hamlet), which can be used as an input for the R codes.
+2. In the orher folders you can find the most and less similar sentences in some pairwise compersions as a result of _pairwise_sentences.R_.
+3. You can find here the results of the comparison of different SBERT models too (in folder _model-compare_).
